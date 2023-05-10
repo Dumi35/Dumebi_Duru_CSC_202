@@ -1,0 +1,11 @@
+version: '3'
+services:
+    database: 
+        container_name: postgres-csc2021
+        image: postgres:latest
+        ports:
+            - "5433:5432"
+        volumes:
+            - C:/Users/dumid/data/postgres/csc2021:/data/postgres
+        env_file:
+            - csc2021.env

@@ -1,0 +1,12 @@
+{
+  "name": "es6-primer",
+  "version": "1.0.0",
+  "description": "\"My first Ecmascript standard JS project in class\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dumebi Duru",
+  "license": "MIT",
+  "type":"module"
+}
