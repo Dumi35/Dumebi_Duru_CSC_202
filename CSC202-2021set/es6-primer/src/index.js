@@ -1,4 +1,4 @@
-import logger,{appName,dummyFunction,genericFunction,genericFunction2, genericFunction3,genericFunction4,genericFunction5} from './tools.js'
+import logger,{appName,dummyFunction,fetchData,genericFunction,genericFunction2, genericFunction3,genericFunction4,genericFunction5} from './tools.js'
 
 logger(`Welcome! The application name is "${appName}". There is
 a function that returns "${dummyFunction()}" "${genericFunction2()}" .`); 
@@ -82,3 +82,37 @@ Promise.all([fetch1,fetch2,fetch3])//get the data for the three calls in an arra
     })
 
 
+import {promiseAwareTimeout } from './tools.js';
+
+
+const usePromiseAwareTimeout = async (milliseconds) => {
+    logger('About to call timeout')
+    try{
+        logger(await promiseAwareTimeout(milliseconds));
+    }
+    
+    catch(error){
+        logger(error);
+    }
+};
+
+
+usePromiseAwareTimeout(3000);
+
+//fetch('https://jsonplaceholder.typicode.com/users/1')
+
+
+const useFetchData = async(url)=>{
+
+    logger("I should try")
+    try{
+        const response = await fetch(url);
+        const data = await response.data;
+        
+    }
+    catch(error){
+        logger("Unable to access file")
+    }
+};
+
+useFetchData("https://jsonplaceholder.typicode.com/users/1")

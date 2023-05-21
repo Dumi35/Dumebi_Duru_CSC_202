@@ -121,4 +121,17 @@ export class User extends Person{
 }
 
 
-    
+export const promiseAwareTimeout = (milliseconds=1000) => { //The function expects milliseconds to be passed. If not passed, milliseconds parameter defaults to 1000
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(`Timeout of ${milliseconds} milliseconds is over`); //send out a success feedback with data using
+            resolve
+            }, milliseconds) //set timeout for passed milliseconds. Defaults to 1000
+    });
+}
+
+export const fetchData = (url="https://jsonplaceholder.typicode.com/users/1") => { //The function expects milliseconds to be passed. If not passed, milliseconds parameter defaults to 1000
+    fetch(url).then(response => response.json()).then(data => 
+        logger(`The Data includes: Id = ${data.id}, Name = ${data.name}`)
+    ) //
+}
